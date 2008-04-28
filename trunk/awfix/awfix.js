@@ -1,17 +1,17 @@
-/*
- * Copyright (c) 2008 Chris Phillips <http://>
+﻿/*
+ * Copyright (c) 2008 Chris Phillips <http://awfix.googlecode.com/>
  * All rights reserved.
  *
- * awfix.js - Authorware Javascript via ReadURL Fix for IE
+ * awfix.js - Fix for Authorware ReadURL("javascript:...") bug
  *
  * Author: Chris Phillips <cphill02@yahoo.com>
  * Version: 0.1
  * Release: 20080427
  *
  * License:
- *   http://javascript.nwbox.com/NWEvents/MIT-LICENSE
+ *   http://awfix.googlecode.com/files/MIT_LICENSE.txt
  * Download:
- *   http://code.google.com/p/awfix/
+ *   http://awfix.googlecode.com/
  */
 
 
@@ -37,16 +37,17 @@ function removeEvent(obj, eType, fn) {
 	}
 }
 
-function awFix(){
-	function addObject(ifrm, obj){ // inner function to add an object to an iframe !!creating a closure
-		var doc = ifrm.contentWindow ? ifrm.contentWindow.document : ifrm.contentDocument;
-		var el = doc.getElementsByTagName('body')[0];
-		if (obj.outerHTML) {
-			el.innerHTML = obj.outerHTML; // IE [appendChild errors out across frames]
-		} else {
-			el.appendChild(obj); // W3C
-		}
+function addObject(ifrm, obj){ //adds an object to an iframe
+	var doc = ifrm.contentWindow ? ifrm.contentWindow.document : ifrm.contentDocument;
+	var el = doc.getElementsByTagName('body')[0];
+	if (obj.outerHTML) {
+		el.innerHTML = obj.outerHTML; // IE [appendChild errors out across frames]
+	} else {
+		el.appendChild(obj); // W3C
 	}
+}
+
+function awFix(){
 	var objs = document.getElementsByTagName('object'); // get all <object/>'s in the document
 	if (objs){
 		for(var i=objs.length-1; i>=0; i--){
@@ -80,12 +81,10 @@ function awFix(){
 				objs[i].parentNode.replaceChild(ifrm, objs[i]); // replace the Authorware object with an iframe 
 			}
 		}
-	//addObject = null; // cleanup closure for better memory management
-	}
-	
+	}	
 }
 
-// hack because IE doesn't have an onDOMContentLoaded event. From http://dean.edwards.name/weblog/
+// hack because IE doesn't have an onDOMContentLoaded event. Credit to http://dean.edwards.name/weblog/
 // window.onload will fire before this hack if the page doesn't contain any images.
 function DOMContentLoaded(fn){
 	try{
