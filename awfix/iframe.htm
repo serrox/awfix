@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title></title>
+<style type="text/css">body {background-color:transparent;margin:0;}</style>
+<script type="text/javascript">
+window.onerror = handleErr;
+
+function handleErr(msg,url,l){
+	var str = 'Javascript error encountered.\nCheck Authorware ReadURL format is ReadURL("javascript:parent.%script%")\n\n';
+	str += 'Error: ' + msg + '\n';
+	str += 'URL: ' + url + '\n';
+	str += 'Line: ' + l + '\n\n';
+	str += 'Click OK to continue.\n\n';
+	alert(str);
+return true;
+}
+</script>
+</head>
+<body></body>
+</html>

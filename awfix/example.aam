@@ -1,0 +1,6 @@
+ver	0	8
+get	.
+seg	all	aw_i0000.aas	0	3895
+# HTML_PARAMS: WIDTH=640 HEIGHT=480 BGCOLOR=444444
+opt	all	BypassSecurityDialog=FALSE
+opt	all	UniqueID=1915330063
