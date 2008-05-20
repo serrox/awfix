@@ -1,0 +1,12 @@
+List of Learning Management Systems (LMS) awfix has been test with.
+
+= Introduction =
+
+When the awfix.js is applied to Authorware content published with the LMS KO web publishing template AICC HACP parameters are appended to the Authorware aam filename and the SCORM API is copied into the child frameset for use by the LMS KO's.
+
+
+= LMS Compatibility =
+
+  * *Saba 3.4* -- _no issues_
+  * *Saba 5.3* -- _no issues_
+  * *SumTotal TotalLMS* -- _currently being tested_
