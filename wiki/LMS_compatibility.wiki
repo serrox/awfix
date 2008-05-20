@@ -9,4 +9,4 @@ When the awfix.js is applied to Authorware content published with the LMS KO web
 
   * *Saba 3.4* -- _no issues_
   * *Saba 5.3* -- _no issues_
-  * *SumTotal TotalLMS* -- _currently being tested_
+  * *Sum Total TotalLMS* -- _currently being tested_
