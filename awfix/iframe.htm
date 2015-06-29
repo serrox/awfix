@@ -6,9 +6,40 @@
 <style type="text/css">body {background-color:transparent;margin:0;}</style>
 <script type="text/javascript">
 	//SCORM API pass through
-	if (parent.API){
-		var API = parent.API;
-	}
+	var API = null,
+	API_1484_11 = null,
+        findAttempts = 0,
+        findAttemptLimit = 500,
+        win = parent;
+
+        while ((!win.API) &&
+           (win.parent) &&
+           (win.parent != win) &&
+           (findAttempts <= findAttemptLimit)){
+
+                findAttempts++;
+                win = win.parent;
+        }
+        
+        if(win.API){
+        	API = win.API;
+        }
+        
+        findAttempts = 0;
+        win = parent;
+        
+        while ((!win.API_1484_11) &&
+           (win.parent) &&
+           (win.parent != win) &&
+           (findAttempts <= findAttemptLimit)){
+
+                findAttempts++;
+                win = win.parent;
+        }
+        
+        if(win.API_1484_11){
+        	API_1484_11 = win.API_1484_11;
+        }
 		
 	window.onerror = handleErr;
 	
